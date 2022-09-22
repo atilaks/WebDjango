@@ -1,3 +1,5 @@
+from decouple import config
+
 """
 Django settings for WebDjango project.
 
@@ -78,11 +80,11 @@ WSGI_APPLICATION = 'WebDjango.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'articulosclientes',
-        'USER': 'postgres',
-        'PASSWORD': '123456',
-        'HOST': '127.0.0.1',
-        'DATABASE_PORT': '5432',
+        'NAME': config('NAME'),
+        'USER': config('USER'),
+        'PASSWORD': config('PASSWORD'),
+        'HOST': config('HOST'),
+        'DATABASE_PORT': config('DATABASE_PORT'),
     }
 }
 
